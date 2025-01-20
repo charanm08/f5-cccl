@@ -167,7 +167,7 @@ class ServiceConfigDeployer(object):
 
         return retry_list
 
-    def _delete_resources(self, delete_list, retry=True):
+    def  _delete_resources(self, delete_list, retry=True):
         """Iterate over the resources and call delete method."""
         LOGGER.debug("Deleting %d resources...", len(delete_list))
         retry_list = list()
@@ -487,6 +487,12 @@ class ServiceConfigDeployer(object):
 
         (create_routes, update_routes, delete_routes) = (
             self._get_resource_tasks(existing, desired)[0:3])
+
+        LOGGER.debug("start")
+        LOGGER.debug(create_routes)
+        LOGGER.debug(update_routes)
+        LOGGER.debug(delete_routes)
+        LOGGER.debug("end")
 
         # Get the list of arp tasks
         LOGGER.debug("Getting arp tasks...")
