@@ -482,9 +482,9 @@ class ServiceConfigDeployer(object):
         existing = self._bigip.get_routes()
         LOGGER.debug(existing)
         desired = desired_config.get('routes', dict())
-        LOGGER.debug(desired['k8s-selected-jennet-cluster-1-master-10.4.1.42'])
-        LOGGER.debug(desired.get('k8s-selected-jennet-cluster-1-master-10.4.1.42',dict()))
-        LOGGER.debug(desired.get('k8s-selected-jennet-cluster-1-master-10.4.1.42',dict())['description'])
+        LOGGER.debug(desired_config)
+        LOGGER.debug(dir(desired['k8s-selected-jennet-cluster-1-master-10.4.1.42']))
+        LOGGER.debug(attr(desired['k8s-selected-jennet-cluster-1-master-10.4.1.42']))
         #description = desired['0']
 
         (create_routes, update_routes, delete_routes) = (
