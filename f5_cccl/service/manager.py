@@ -480,7 +480,10 @@ class ServiceConfigDeployer(object):
         # Get the list of route tasks
         LOGGER.debug("Getting route tasks...")
         existing = self._bigip.get_routes()
+        LOGGER.debug(existing)
         desired = desired_config.get('routes', dict())
+        LOGGER.debug(desired)
+        #description = desired['0']
 
         (create_routes, update_routes, delete_routes) = (
             self._get_resource_tasks(existing, desired)[0:3])
