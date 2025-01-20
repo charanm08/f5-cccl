@@ -480,10 +480,10 @@ class ServiceConfigDeployer(object):
         # Get the list of route tasks
         LOGGER.debug("Getting route tasks...")
         existing = self._bigip.get_routes()
-        LOGGER.debug(existing)
         desired = desired_config.get('routes', dict())
-        LOGGER.debug(desired_config)
-        LOGGER.debug(desired['k8s-selected-jennet-cluster-1-master-10.4.1.42']['data'])
+        LOGGER.debug("data description")
+        LOGGER.debug(desired['k8s-selected-jennet-cluster-1-master-10.4.1.42'].data)
+        LOGGER.debug("data")
         LOGGER.debug(desired['k8s-selected-jennet-cluster-1-master-10.4.1.42'].description)
         #description = desired['0']
 
