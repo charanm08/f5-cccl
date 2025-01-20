@@ -484,7 +484,7 @@ class ServiceConfigDeployer(object):
         desired = desired_config.get('routes', dict())
         LOGGER.debug(desired_config)
         LOGGER.debug(dir(desired['k8s-selected-jennet-cluster-1-master-10.4.1.42']))
-        LOGGER.debug(getattr((desired['k8s-selected-jennet-cluster-1-master-10.4.1.42'], 'description')))
+        LOGGER.debug(getattr(desired['k8s-selected-jennet-cluster-1-master-10.4.1.42'], 'description'))
         #description = desired['0']
 
         (create_routes, update_routes, delete_routes) = (
